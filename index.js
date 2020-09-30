@@ -1,4 +1,4 @@
-const Express = require("express");
+/*const Express = require("express");
 const BodyParser = require("body-parser");
 const Speakeasy = require("speakeasy");
 let qrcode = require('qrcode');
@@ -23,7 +23,8 @@ app.post("/totp-secret", (request, response, next) => {
            "message": 'Verify OTP',
            "Secret": secret.base32,
            "otpURL": secret.otpauth_url,
-            "Qrcode":image_data }); 
+           "Qrcode":image_data
+        });
 });
 });
 
@@ -37,21 +38,22 @@ app.post("/totp-validate", (request, response, next) => {
             token: request.body.token
         })
     });
-});
+});*/
 
 
-/* -- Separate code to check in console
-let speakeasy = require('speakeasy');
-let qrcode = require('qrcode');
+// -- Separate code to check in console
+const speakeasy = require('speakeasy');
+const qrcode = require('qrcode');
 
-let secret = speakeasy.generateSecret({
-    name: "API for Authentication"
+const secret = speakeasy.generateSecret({
+    name:"APIforAuthentication"
 });
 console.log(secret); // Save this value to your DB for the user
 
 qrcode.toDataURL(secret.otpauth_url, function(err, image_data) {
    console.log(image_data); // A data URI for the QR code image
   });
-  */
+
+  
   
  
